@@ -1,4 +1,4 @@
-# RamosTracker 🎓
+# RamosTracker
 
 **RamosTracker** es una aplicación móvil nativa desarrollada en Flutter, diseñada para ayudar a estudiantes universitarios a sobrevivir al semestre. Permite gestionar asignaturas, llevar un control exacto de las notas, organizar el horario de clases y almacenar material de estudio localmente.
 
