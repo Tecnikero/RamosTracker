@@ -178,7 +178,6 @@ class _AgregarRamoScreenState extends State<AgregarRamoScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text('Evaluaciones / Syllabus', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                  // EL INTERRUPTOR PARA ACTIVAR EL MODO RA
                   Row(
                     children: [
                       const Text('Modo RA', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue)),

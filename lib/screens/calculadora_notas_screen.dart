@@ -104,7 +104,6 @@ class _CalculadoraNotasScreenState extends State<CalculadoraNotasScreen> {
     );
   }
 
-  // Renderiza el modo normal
   Widget _construirListaNormal(double notaNecesaria) {
     return ListView.builder(
       padding: const EdgeInsets.all(16),

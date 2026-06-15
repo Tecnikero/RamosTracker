@@ -85,11 +85,10 @@ class _MaterialesScreenState extends State<MaterialesScreen> {
                           widget.ramo.materiales = List.from(widget.ramo.materiales)
                             ..removeAt(index);
                         });
-                        await widget.ramo.save(); // Guardamos el cambio
+                        await widget.ramo.save();
                       },
                     ),
                     onTap: () {
-                      // Aquí programaremos que se abra el PDF en la pantalla
                     },
                   ),
                 );

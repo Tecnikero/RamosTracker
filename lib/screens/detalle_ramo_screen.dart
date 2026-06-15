@@ -188,7 +188,6 @@ class _DetalleRamoScreenState extends State<DetalleRamoScreen> {
             itemBuilder: (context, index) {
               final archivo = materiales[index];
               
-              // Definimos colores dinámicos según el tipo de archivo
               Color colorFondo;
               Color colorIcono;
               if (archivo.extension.toLowerCase() == 'pdf') {
@@ -206,10 +205,9 @@ class _DetalleRamoScreenState extends State<DetalleRamoScreen> {
                 elevation: 4,
                 margin: const EdgeInsets.only(bottom: 16),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-                clipBehavior: Clip.antiAlias, // Para que el efecto de toque no se salga de las curvas
+                clipBehavior: Clip.antiAlias,
                 child: InkWell(
                   onTap: () async {
-                    // ¡AQUÍ ESTÁ LA MAGIA PARA ABRIR EL ARCHIVO!
                     final result = await OpenFilex.open(archivo.rutaArchivo);
                     
                     if (result.type != ResultType.done && context.mounted) {
@@ -222,7 +220,6 @@ class _DetalleRamoScreenState extends State<DetalleRamoScreen> {
                     padding: const EdgeInsets.all(12.0),
                     child: Row(
                       children: [
-                        // 1. EL CUADRO DE "VISTA PREVIA"
                         Container(
                           width: 70,
                           height: 90,
@@ -237,7 +234,6 @@ class _DetalleRamoScreenState extends State<DetalleRamoScreen> {
                         ),
                         const SizedBox(width: 16),
                         
-                        // 2. LOS TEXTOS ORDENADOS
                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -248,8 +244,8 @@ class _DetalleRamoScreenState extends State<DetalleRamoScreen> {
                                   fontWeight: FontWeight.bold, 
                                   fontSize: 16,
                                 ),
-                                maxLines: 2, // Solo permite 2 líneas máximo
-                                overflow: TextOverflow.ellipsis, // Si es más largo, pone "..."
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
                               ),
                               const SizedBox(height: 10),
                               Row(
