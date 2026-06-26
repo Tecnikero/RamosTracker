@@ -1,4 +1,3 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 
 part of 'ramo.dart';
 
@@ -184,15 +183,16 @@ class RamoAdapter extends TypeAdapter<Ramo> {
       horarios: (fields[1] as List).cast<BloqueHorario>(),
       evaluaciones: (fields[2] as List).cast<Evaluacion>(),
       materiales: (fields[3] as List?)?.cast<MaterialEstudio>(),
-      usaSistemaRA: fields[4] as bool,
+      usaSistemaRA: fields[4] as bool? ?? false,
       gruposRA: (fields[5] as List?)?.cast<GrupoRA>(),
+      colorValue: fields[6] as int?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Ramo obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.nombre)
       ..writeByte(1)
@@ -204,7 +204,9 @@ class RamoAdapter extends TypeAdapter<Ramo> {
       ..writeByte(4)
       ..write(obj.usaSistemaRA)
       ..writeByte(5)
-      ..write(obj.gruposRA);
+      ..write(obj.gruposRA)
+      ..writeByte(6)
+      ..write(obj.colorValue);
   }
 
   @override

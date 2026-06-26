@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:flutter/material.dart';
 
 part 'ramo.g.dart';
 
@@ -53,31 +54,37 @@ class GrupoRA {
 }
 
 @HiveType(typeId: 2)
-class Ramo extends HiveObject { 
+class Ramo extends HiveObject {
   @HiveField(0)
   String nombre;
   @HiveField(1)
   List<BloqueHorario> horarios;
-  
+
   @HiveField(2)
   List<Evaluacion> evaluaciones;
-  
+
   @HiveField(3)
-  List<MaterialEstudio> materiales; 
+  List<MaterialEstudio> materiales;
 
   @HiveField(4)
   bool usaSistemaRA;
-  
+
   @HiveField(5)
   List<GrupoRA> gruposRA;
 
+  @HiveField(6)
+  int? colorValue;
+
   Ramo({
-    required this.nombre, 
-    required this.horarios, 
+    required this.nombre,
+    required this.horarios,
     required this.evaluaciones,
-    List<MaterialEstudio>? materiales, 
+    List<MaterialEstudio>? materiales,
     this.usaSistemaRA = false,
     List<GrupoRA>? gruposRA,
-  }) : materiales = materiales ?? [],
-       gruposRA = gruposRA ?? []; 
+    this.colorValue,
+  })  : materiales = materiales ?? [],
+        gruposRA = gruposRA ?? [];
+
+  Color get color => colorValue != null ? Color(colorValue!) : Colors.blue;
 }
