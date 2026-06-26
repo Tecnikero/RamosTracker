@@ -11,11 +11,14 @@ workflows:
       - name: Get Flutter packages
         script: |
           flutter packages pub get
-      - name: Install CocoaPods dependencies
-        script: |
-          cd ios && pod install
       - name: Build iOS app (sin codesign)
         script: |
           flutter build ios --release --no-codesign
+      - name: Empaquetar IPA sin firmar
+        script: |
+          mkdir -p build/ios/iphoneos/Payload
+          cp -r build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload/
+          cd build/ios/iphoneos
+          zip -r ramotracker-unsigned.ipa Payload
     artifacts:
-      - build/ios/iphoneos/*.app
+      - build/ios/iphoneos/*.ipa
